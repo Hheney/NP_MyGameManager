@@ -43,8 +43,9 @@ public class CubeMove : MonoBehaviour
         {
             Transform childTf = parentTf.GetChild(0);
             renderer = childTf.GetComponent<Renderer>();
-
-            renderer.material.color = color;
+            if(renderer != null)
+                renderer.material.color = color;
+            
             parentTf = childTf;
         }
     }
